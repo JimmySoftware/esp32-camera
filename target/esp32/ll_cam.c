@@ -20,7 +20,11 @@
 #include "hal/gpio_ll.h"
 #else
 #include "soc/gpio_periph.h"
+#include "soc/io_mux_reg.h"
+#include "hal/gpio_ll.h"
+#include "rom/gpio.h"
 #define esp_rom_delay_us ets_delay_us
+/*
 static inline int gpio_ll_get_level(gpio_dev_t *hw, int gpio_num)
 {
     if (gpio_num < 32) {
@@ -29,6 +33,7 @@ static inline int gpio_ll_get_level(gpio_dev_t *hw, int gpio_num)
         return (hw->in1.data >> (gpio_num - 32)) & 0x1;
     }
 }
+*/
 #endif
 #include "ll_cam.h"
 #include "xclk.h"
