@@ -39,11 +39,13 @@ static inline int gpio_ll_get_level(gpio_dev_t *hw, int gpio_num)
 #include "xclk.h"
 #include "cam_hal.h"
 
+
 #if (ESP_IDF_VERSION_MAJOR >= 5)
 #define GPIO_PIN_INTR_POSEDGE GPIO_INTR_POSEDGE
 #define GPIO_PIN_INTR_NEGEDGE GPIO_INTR_NEGEDGE
-#define gpio_matrix_in(a,b,c) gpio_iomux_in(a,b)
+//#define gpio_matrix_in(a,b,c) gpio_iomux_in(a,b) // Jimmy - crash 
 #endif
+
 
 static const char *TAG = "esp32 ll_cam";
 
